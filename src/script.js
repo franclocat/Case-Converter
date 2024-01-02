@@ -2,6 +2,7 @@ let upper = document.getElementById("upper-case");
 let lower = document.getElementById("lower-case");
 let proper = document.getElementById("proper-case");
 let sentence = document.getElementById("sentence-case");
+let save = document.getElementById("save-text-file");
 
 let textArea = document.getElementById("text");
 
@@ -33,7 +34,23 @@ sentence.addEventListener("click", function () {
     textArea.value = sentences.join(". ");
 })
 
-
 function makeFirstLetterUpperCase(wordOrSentence) {
     return wordOrSentence.charAt(0).toUpperCase() + wordOrSentence.slice(1);
+}
+
+save.addEventListener("click", function () {
+    download("text.txt",textArea.value);
+})
+
+function download(filename, text) {
+    let element = document.createElement('a');
+    element.setAttribute('href', 'data:pdf/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
 }

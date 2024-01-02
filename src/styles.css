@@ -1,4 +1,9 @@
+html {
+    background-color: dimgrey;
+}
+
 button {
+    margin: 5px;
     background-color: orange;
     min-width: 15vw;
     min-height: 10vh;
@@ -10,4 +15,10 @@ textarea {
     width: 98vw;
     height: 75vh;
     resize: none;
+}
+
+#buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
