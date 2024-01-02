@@ -1,0 +1,13 @@
+button {
+    background-color: orange;
+    min-width: 15vw;
+    min-height: 10vh;
+    border-radius: 5px;
+    border-color: #dddd;
+}
+
+textarea {
+    width: 98vw;
+    height: 75vh;
+    resize: none;
+}
